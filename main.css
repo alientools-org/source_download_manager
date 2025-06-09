@@ -1,0 +1,140 @@
+/* Globale Stile fÃ¼r die gesamte App */
+App {
+    background: #282a36; /* Dunkler Hintergrund, inspiriert von Dracula Theme */
+    color: #f8f8f2;      /* Helle Schriftfarbe fÃ¼r Kontrast */
+}
+
+/* Header-Stile */
+Header {
+    height: 3; /* StandardmÃ¤ÃŸig hÃ¶heren Header fÃ¼r Titel und Uhrzeit */
+    background: #44475a; /* Etwas helleres Grau als Hintergrund */
+    color: #8be9fd;     /* Aquamarin fÃ¼r Header-Text */
+    text-align: center; /* Text zentrieren */
+    /* Korrektur: 'solid' als Bordertyp verwenden, da 'heavy' als eigenstÃ¤ndiger Typ den Parser irritiert. */
+    border-bottom: solid #6272a4; /* Eine Linie unten als Trenner. Die Dicke ist nun Standard. */
+    padding: 0 2; /* Etwas Polsterung links und rechts */
+}
+
+/* Stile fÃ¼r die TabbedContent-Komponente (die Haupt-Tabs) */
+#main_tabs {
+    height: 1fr; /* Wichtig: Tabs sollen den restlichen vertikalen Platz ausfÃ¼llen */
+    background: #282a36; /* Hintergrund wie die App */
+    color: #f8f8f2;
+    border: none; /* Standard-Rahmen entfernen, falls vorhanden */
+}
+
+/* Stile fÃ¼r die Tab-Leiste (die Buttons "Download", "Compile", "Export") */
+TabbedContent > .tab-pane-tabs {
+    background: #383a4c; /* Hintergrund fÃ¼r die Leiste selbst */
+    /* Korrektur: 'solid' als Bordertyp verwenden, da 'thin' als eigenstÃ¤ndiger Typ den Parser irritiert. */
+    border-bottom: solid #6272a4; /* Trennlinie unter den Tabs. Dicke ist nun Standard. */
+}
+
+/* Stile fÃ¼r einzelne Tabs in der Leiste */
+TabbedContent > .tab-pane-tabs Tab {
+    background: #383a4c; /* Hintergrund fÃ¼r nicht-aktive Tabs */
+    color: #f8f8f2;
+    padding: 0 2; /* Etwas Polsterung innerhalb der Tabs */
+    border-top: none; /* Obere Linie entfernen */
+    border-left: none; /* Linke Linie entfernen */
+    border-right: none; /* Rechte Linie entfernen */
+    border-bottom: none; /* Untere Linie entfernen */
+}
+
+/* Stile fÃ¼r den aktuell ausgewÃ¤hlten (aktiven) Tab */
+TabbedContent > .tab-pane-tabs Tab.-active {
+    background: #282a36; /* Hintergrund des aktiven Tabs wie der Inhaltsbereich */
+    color: #bd93f9;      /* Lila fÃ¼r den aktiven Tab-Text */
+    text-style: bold;    /* Fettgedruckt */
+    /* Korrektur: 'solid' als Bordertyp verwenden, da 'thick' als eigenstÃ¤ndiger Typ den Parser irritiert. */
+    border-bottom: solid #bd93f9; /* Eine lila Linie unter dem aktiven Tab. Dicke ist nun Standard. */
+}
+
+
+/* Stile fÃ¼r den Inhalt jedes einzelnen Tab-Bereichs */
+.tab-pane {
+    height: 1fr; /* Stellen Sie sicher, dass der Tab-Inhalt den gesamten verfÃ¼gbaren Platz einnimmt */
+    background: #282a36; /* Konsistent mit dem App-Hintergrund */
+    padding: 1; /* Etwas Polsterung um den Inhalt jedes Tabs */
+}
+
+
+/* Stile fÃ¼r den Download-Tab-Bereich */
+#download_tab #download_area {
+    height: 1fr; /* FÃ¼llt den gesamten vertikalen Raum im Tab aus */
+    layout: vertical; /* Explizite vertikale Anordnung */
+    /* Korrektur: 'align' benÃ¶tigt zwei Werte: horizontal und vertikal. */
+    align: center middle; /* Horizontal zentriert, vertikal in der Mitte */
+}
+
+#download_title {
+    color: #50fa7b; /* GrÃ¼ne Farbe fÃ¼r den Titel */
+    text-style: bold;
+    margin-bottom: 1; /* Abstand nach unten */
+}
+
+/* Stile fÃ¼r die horizontale Suchleiste */
+#search_bar {
+    width: 100%; /* Die Suchleiste soll die gesamte Breite einnehmen */
+    height: auto; /* Automatische HÃ¶he basierend auf dem Inhalt */
+    padding: 0 0; /* Keine zusÃ¤tzliche Polsterung um die Leiste selbst */
+    /* Korrektur: 'align' benÃ¶tigt zwei Werte. FÃ¼r nur vertikale Zentrierung, kann man 'left middle' oder 'center middle' wÃ¤hlen. */
+    align: left middle; /* Vertikale Zentrierung der Elemente, linksbÃ¼ndig */
+    margin-bottom: 1; /* Abstand zur ListView */
+}
+
+#search_input {
+    width: 1fr; /* Nimmt den restlichen horizontalen Platz ein */
+    background: #44475a; /* Dunklerer Hintergrund fÃ¼r das Eingabefeld */
+    color: #f8f8f2;
+    border: solid #6272a4; /* Feiner Rahmen */
+    padding: 0 1; /* Leerer Raum innen */
+    margin-right: 1; /* Kleiner Abstand zum Button */
+}
+
+#search_button {
+    width: auto; /* Nur so breit wie nÃ¶tig */
+    min-width: 8; /* Mindestbreite, damit der Text sichtbar ist */
+    color: #8be9fd;     /* Aquamarin-Textfarbe */
+    background: #6272a4; /* Graublauer Hintergrund fÃ¼r den Button */
+    border: round #6272a4; /* Abgerundeter Rahmen */
+    text-align: center;
+}
+
+/* Stile fÃ¼r die ListView */
+#packages_list {
+    height: 1fr; /* ListView soll den meisten verfÃ¼gbaren vertikalen Platz einnehmen */
+    width: 100%; /* Volle Breite */
+    /* Korrektur: 'solid' als Bordertyp verwenden, da 'thin' als eigenstÃ¤ndiger Typ den Parser irritiert. */
+    border: solid #6272a4; /* DÃ¼nner Rahmen. Dicke ist nun Standard. */
+    background: #282a36; /* Konsistent mit App-Hintergrund */
+    margin-bottom: 1; /* Abstand zum Download-Button */
+}
+
+/* Stile fÃ¼r den Download-Button */
+#download_button {
+    width: 100%; /* Volle Breite */
+    height: auto; /* Automatische HÃ¶he */
+    background: #50fa7b; /* GrÃ¼ner Hintergrund fÃ¼r den Download-Button */
+    color: #282a36;      /* Dunkle Schrift auf grÃ¼nem Hintergrund */
+    text-style: bold;    /* Fettgedruckter Text */
+    border: round #50fa7b; /* Abgerundeter Rahmen passend zum Hintergrund */
+    padding: 1 0; /* Vertikale Polsterung */
+    text-align: center;
+}
+
+/* Footer-Stile */
+Footer {
+    height: 1;
+    background: #44475a; /* Konsistent mit Header-Hintergrund */
+    color: #f8f8f2;
+    /* Korrektur: 'solid' als Bordertyp verwenden, da 'heavy' als eigenstÃ¤ndiger Typ den Parser irritiert. */
+    border-top: solid #6272a4; /* Eine Linie oben als Trenner. Dicke ist nun Standard. */
+}
+
+/* Stile fÃ¼r ausgewÃ¤hlte ListeneintrÃ¤ge */
+SelectablePackageListItem.-selected {
+    background: #bd93f9; /* Lila Hintergrund fÃ¼r ausgewÃ¤hlte Elemente */
+    color: #282a36; /* Dunkle Schrift fÃ¼r besseren Kontrast auf Lila */
+    text-style: bold;
+}
